@@ -1,0 +1,50 @@
+{
+	"name": "@monorepo-remix-react-compiler/web",
+	"version": "0.0.0",
+	"private": true,
+	"description": "Web application",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/monorepo-remix-react-compiler",
+		"directory": "apps/web"
+	},
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"build": "remix vite:build",
+		"dev": "pnpm run generate-stylesheet --watch & remix vite:dev",
+		"generate-stylesheet": "tokenami --output ./app/styles.css",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
+		"preview": "remix-serve ./build/server/index.js",
+		"typecheck": "sed -i '' 's/CI: false/CI: true/' .tokenami/tokenami.env.d.ts; exit_code=0; tsc --build || exit_code=$?; sed -i '' 's/CI: true/CI: false/' .tokenami/tokenami.env.d.ts; exit $exit_code"
+	},
+	"dependencies": {
+		"@babel/plugin-syntax-jsx": "^7.25.9",
+		"@monorepo-remix-react-compiler/css": "workspace:0.0.1",
+		"@monorepo-remix-react-compiler/design-system": "workspace:0.0.1",
+		"@monorepo-remix-react-compiler/invariant": "workspace:0.0.1",
+		"@remix-run/node": "catalog:",
+		"@remix-run/react": "catalog:",
+		"@remix-run/serve": "catalog:",
+		"@tokenami/css": "catalog:",
+		"isbot": "^5.1.17",
+		"react": "catalog:",
+		"react-dom": "catalog:"
+	},
+	"devDependencies": {
+		"@babel/preset-typescript": "^7.26.0",
+		"@monorepo-remix-react-compiler/eslint-config": "workspace:0.0.1",
+		"@monorepo-remix-react-compiler/typescript-config": "workspace:0.0.1",
+		"@remix-run/dev": "catalog:",
+		"@tokenami/dev": "catalog:",
+		"@tokenami/ts-plugin": "catalog:",
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"babel-plugin-react-compiler": "19.0.0-beta-8a03594-20241020",
+		"typescript": "catalog:",
+		"vite": "^5.4.10",
+		"vite-plugin-babel": "^1.2.0"
+	}
+}

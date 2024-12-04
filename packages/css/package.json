@@ -1,0 +1,32 @@
+{
+	"name": "@monorepo-remix-react-compiler/css",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Shared code for Tokenami usage",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/monorepo-remix-react-compiler",
+		"directory": "packages/css"
+	},
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./build/src/index.js",
+		"./config": "./build/src/config.js"
+	},
+	"scripts": {
+		"build": "tsc --noCheck",
+		"dev": "tsc --noCheck",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@tokenami/css": "catalog:"
+	},
+	"devDependencies": {
+		"@monorepo-remix-react-compiler/eslint-config": "workspace:0.0.1",
+		"@monorepo-remix-react-compiler/typescript-config": "workspace:0.0.1",
+		"typescript": "catalog:"
+	}
+}

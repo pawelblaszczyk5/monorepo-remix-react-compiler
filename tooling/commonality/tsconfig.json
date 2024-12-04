@@ -1,0 +1,7 @@
+{
+	"extends": "@monorepo-remix-react-compiler/typescript-config/node-build",
+	"include": ["src"],
+	"compilerOptions": {
+		"types": ["node"]
+	}
+}

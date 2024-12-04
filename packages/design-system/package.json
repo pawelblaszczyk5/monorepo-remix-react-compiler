@@ -1,0 +1,39 @@
+{
+	"name": "@monorepo-remix-react-compiler/design-system",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Design system package with shared components",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/monorepo-remix-react-compiler",
+		"directory": "packages/design-system"
+	},
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		"./button": "./build/src/button.jsx"
+	},
+	"scripts": {
+		"build": "tsc --noCheck",
+		"dev": "pnpm run generate-stylesheet && tsc --noCheck",
+		"generate-stylesheet": "tokenami --output ./build/styles.css",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
+		"typecheck": "sed -i '' 's/CI: false/CI: true/' .tokenami/tokenami.env.d.ts; exit_code=0; tsc --noEmit || exit_code=$?; sed -i '' 's/CI: true/CI: false/' .tokenami/tokenami.env.d.ts; exit $exit_code"
+	},
+	"dependencies": {
+		"@monorepo-remix-react-compiler/css": "workspace:0.0.1",
+		"@tokenami/css": "catalog:",
+		"react": "catalog:",
+		"react-dom": "catalog:"
+	},
+	"devDependencies": {
+		"@monorepo-remix-react-compiler/eslint-config": "workspace:0.0.1",
+		"@monorepo-remix-react-compiler/typescript-config": "workspace:0.0.1",
+		"@tokenami/dev": "catalog:",
+		"@tokenami/ts-plugin": "catalog:",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"typescript": "catalog:"
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://commonality.co/config.json",
+	"checks": {
+		"*": [
+			"recommended/has-readme",
+			"recommended/has-codeowner",
+			"recommended/valid-package-name",
+			"recommended/unique-dependency-types",
+			"recommended/matching-dev-peer-versions",
+			"recommended/extends-repository-field",
+			"@monorepo-remix-react-compiler/commonality/has-description-field",
+			"@monorepo-remix-react-compiler/commonality/use-catalog-protocol",
+			"@monorepo-remix-react-compiler/commonality/use-exact-workspace-version"
+		]
+	},
+	"constraints": {
+		"*": {
+			"disallow": ["application"]
+		}
+	}
+}

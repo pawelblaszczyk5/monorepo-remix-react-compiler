@@ -1,0 +1,28 @@
+{
+	"name": "@monorepo-remix-react-compiler/invariant",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Invariant utility function",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pawelblaszczyk5/monorepo-remix-react-compiler",
+		"directory": "packages/invariant"
+	},
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": "./build/src/index.js"
+	},
+	"scripts": {
+		"build": "tsc --noCheck",
+		"dev": "tsc --noCheck",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@monorepo-remix-react-compiler/eslint-config": "workspace:0.0.1",
+		"@monorepo-remix-react-compiler/typescript-config": "workspace:0.0.1",
+		"typescript": "catalog:"
+	}
+}
